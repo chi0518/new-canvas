@@ -1,7 +1,13 @@
 import "./style.css";
 
 const canvas = document.getElementById("myCanvas");
+if (!(canvas instanceof HTMLCanvasElement)) {
+  throw new Error("Canvas element not found");
+}
 const ctx = canvas.getContext("2d");
+if (!ctx) {
+  throw new Error("2D canvas context not available");
+}
 
 ctx.fillStyle = "skyblue";
 ctx.fillRect(50, 100, 100, 100);
